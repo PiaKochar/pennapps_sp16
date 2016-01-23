@@ -1,6 +1,12 @@
-// Call method currently in neighborhood_parser.js to
-// get data from the API - remember to use chrome.tabs.executeScript
-// that function should do all the work, the call should just
-// be here in a mouseclick listener (although if the data is
-// surfaced in the popup window, should that be done here since
-// this is in scope?)
+var api_key = 'f417bd1dfda811597b5c71a5b08536943d927648';
+$.getJSON('https://api.everyblock.com/content/philly/locations/bella-vista/timeline/.json?schema=crime&token=' + api_key, function (events) {
+    $.each(events.results, function (j, event_val) {
+        var $event = $('<li>');
+        $event.text(event_val.title);
+        $('.event_list').append($event);
+    });
+});
+
+$('#events').click(function () {
+    $("ul").toggle();
+});

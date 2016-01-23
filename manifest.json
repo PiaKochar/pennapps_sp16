@@ -5,10 +5,10 @@
   "description": "This extension loads information from EveryBlock on an Airbnb listing page",
   "version": "1.0",
 
-  "background": {
-    "scripts": [ "background.js" ],
-    "persistent": false
-  },
+  // "background": {
+  //   "scripts": [ "background.js" ],
+  //   "persistent": false
+  // },
 
   "permissions": [
     "declarativeContent",
@@ -16,10 +16,10 @@
   ],
 
   "content_scripts": [
-    {
-      // "css": ["content_scripts/parse.css"],
+    { "matches": ["https://www.airbnb.com/rooms/*"],
+      "css": ["content_scripts/parse.css"],
       "js": ["content_scripts/jquery.min.js",
-           "content_scripts/comment-parser.js",
+           // "content_scripts/neighborhood-parser.js",
            "content_scripts/main.js"]
     }
   ],
@@ -27,6 +27,6 @@
   "browser_action": {
       "default_popup": "popup/popup.html",
       "default_icon": "popup/icon.png",
-      "default_title": "IAmA Parser"
+      "default_title": "Airbnb Extension"
   }
 }

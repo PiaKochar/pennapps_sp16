@@ -1,0 +1,26 @@
+body {
+    overflow-x: visible;
+    overflow-y: visible;
+    width: 100px;
+}
+button {
+    margin: 5px;
+    width: 90px;
+    background: yellow;
+    color: black;
+}
+input {
+    width: 90px;
+    margin: 5px;
+}
+img {
+    margin: 5px;
+    border: 2px solid black;
+    vertical-align: middle;
+    height: 75px;
+}
+
+.event_list li {
+    
+    border: 1px solid black;
+}
